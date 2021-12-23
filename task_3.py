@@ -1,11 +1,10 @@
-# prefix = input("Введите prefix ")
+prefix = input("Введите выражения в префиксной нотации: ")
 
 # prefix = "/ + 3 10 * + 2 4 - 3 5"
 # prefix = "+ + 10 20 30"
-prefix = "+ 2 * 2 - 2 1"
+# prefix = "+ 2 * 2 - 2 1"
 # prefix = "+ - 13 4 55"
 # prefix = "- - 2 1"
-print(prefix)
 prefixString = prefix.split()
 
 operatorList = list()
@@ -24,6 +23,12 @@ def toInfix(param = ''):
         result = resultList[0] + ' ' + operatorList[0] + ' ' + numbersList[0]
         operatorList.clear()
         numbersList.clear()
+        resultList.clear()
+        return resultList.append(result)
+    elif param == 'sec':
+        result = numbersList[0] + ' ' + operatorList[0] + ' ' + resultList[0]
+        numbersList.clear()
+        operatorList.clear()
         resultList.clear()
         return resultList.append(result)
     else :
@@ -47,35 +52,32 @@ def toInfix(param = ''):
             return resultList.append(result)
 
 
+if len(prefixString) < 4:
+    print("Вы ввели неверное выражение")
+else:
+    for value in reversed(prefixString):
+        if value == '/' or value == '*' or value == '-' or value == '+':
+            operatorList.insert(0,value)
+            if len(resultList) >= 2 and len(operatorList) >= 1:
+                toInfix('merge')
+            elif len(resultList) == 1 and len(numbersList) == 1 and len(operatorList) == 1:
+                toInfix('sec')
+            elif len(numbersList) >= 2 and len(operatorList) >= 1:
+                toInfix()
+        elif value.isdigit():
+            numbersList.insert(0, value)
+            if len(numbersList) >= 2 and len(operatorList) >= 1 and prefixString[0].isdigit() != 1:
+                toInfix()
+        else:
+            print('Вы ввели неверное выражение')
 
+    if len(numbersList) != 0 and len(operatorList) != 0:
+        toInfix('last')
+    elif len(numbersList) == 0 and len(operatorList) != 0:
+        result = operatorList[0] + ' ' + resultList[0]
+        resultList.clear()
+        operatorList.clear()
+        resultList.append(result)
 
-for value in reversed(prefixString):
-    if value == '/' or value == '*' or value == '-' or value == '+':
-        operatorList.insert(0,value)
-        if len(resultList) >= 2 and len(operatorList) >= 1:
-            toInfix('merge')
-        elif len(numbersList) >= 2 and len(operatorList) >= 1:
-            toInfix()
-    elif value.isdigit():
-        numbersList.insert(0, value)
-        if len(numbersList) >= 2 and len(operatorList) >= 1 and prefixString[0].isdigit() != 1:
-            toInfix()
-    else:
-        print('Вы ввели не верное значение')
-
-if len(numbersList) != 0 and len(operatorList) != 0:
-    toInfix('last')
-elif len(numbersList) == 0 and len(operatorList) != 0:
-    result = operatorList[0] + ' ' + resultList[0]
-    resultList.clear()
-    operatorList.clear()
-    resultList.append(result)
-
-correctResult = resultList[0].split()
-
-# if correctResult[0] == '(' and correctResult[1] == '(' and correctResult[len(correctResult) - 2] == ')' and correctResult[len(correctResult) - 1] == ')':
-#     correctResult.pop(0)
-#     correctResult.pop(len(correctResult) - 1)
-#     print(correctResult)
-# else:
-print(resultList[0])
+    correctResult = resultList[0].split()
+    print(resultList[0])
