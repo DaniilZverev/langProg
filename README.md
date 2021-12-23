@@ -12,4 +12,4 @@
 
 - Задание 4 : Интерпретатор языка COW.
 
-  <a href="https://github.com/DaniilZverev/langProg/blob/master/task_3.py" targer="_blank">task_4.py</a>
+  <a href="https://github.com/DaniilZverev/langProg/blob/master/task_4.py" targer="_blank">task_4.py</a>
