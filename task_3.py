@@ -1,3 +1,6 @@
+#   P.S Сверялся с конвертом из инфикс в префикс :
+#   https://www.web4college.com/converters/infix-to-postfix-prefix.php
+
 prefix = input("Введите выражения в префиксной нотации: ")
 
 # prefix = "/ + 3 10 * + 2 4 - 3 5"
