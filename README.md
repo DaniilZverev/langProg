@@ -9,3 +9,7 @@
 - Задание 3 : Перевод префиксной нотации в инфиксную.
 
   <a href="https://github.com/DaniilZverev/langProg/blob/master/task_3.py" targer="_blank">task_3.py</a>
+
+- Задание 4 : Интерпретатор языка COW.
+
+  <a href="https://github.com/DaniilZverev/langProg/blob/master/task_3.py" targer="_blank">task_4.py</a>
