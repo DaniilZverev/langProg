@@ -1,5 +1,8 @@
 #                Task 1
 #
+from random import uniform
+from collections import Counter
+
 # firstNumber = int(input('Введите первое число - '))
 # secondNumber = int(input('Введите второе число -'))
 # operator = input('Введите оператор - ')
@@ -51,6 +54,17 @@
 # print("Самое длинное слово:")
 # print(wm)
 
+#                Task 4
+# num = [uniform(-100, 100) for i in range(10)]
+# print(num)
+# print(sorted(num, key=lambda x: abs(x - int(x))))
 
+
+#                Task 5
+# with open("text.txt") as f:
+#     c = Counter()
+#     for x in f:
+#         c += Counter(x.strip())
+# print(c)
 
 
