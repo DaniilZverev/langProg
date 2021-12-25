@@ -29,7 +29,8 @@ while 0 < 1:
                 currentValue = values[currentIndex]
         if operator == "OOM":
             if currentIndex < len(values):
-                print(values[currentIndex])
+                decode = chr(int(values[currentIndex]))
+                print(decode, end='')
             else:
                 print('Error: Ячейка пустая')
         if operator == "mOo":
@@ -40,6 +41,8 @@ while 0 < 1:
             else:
                 changeIndex('+')
         if operator == "MoO":
+            if len(values) == 0:
+                values.insert(0, 0)
             if currentIndex < len(values):
                 values[currentIndex] += 1
             else:
@@ -56,11 +59,13 @@ while 0 < 1:
                 values.insert(currentIndex, inputValue)
                 currentValue = values[currentIndex]
             else:
-                print(values[currentIndex])
+                decode = chr(int(values[currentIndex]))
+                print(decode, end='')
         if operator == "OOO":
             if currentIndex < len(values):
                 values[currentIndex] = 0
             else:
                 print('Error: Ячейка пустая')
+
 
 
