@@ -25,8 +25,7 @@ while 0 < 1:
             if currentIndex < len(values):
                 currentValue = values[currentIndex]
             else:
-                inputValue = int(input("ввод значения в текущую ячейку: "))
-                values.insert(currentIndex, inputValue)
+                values.insert(currentIndex, 0)
                 currentValue = values[currentIndex]
         if operator == "OOM":
             if currentIndex < len(values):
@@ -60,9 +59,7 @@ while 0 < 1:
                 print(values[currentIndex])
         if operator == "OOO":
             if currentIndex < len(values):
-                values.pop(currentIndex)
-                if currentIndex != 0:
-                    changeIndex('-')
+                values[currentIndex] = 0
             else:
                 print('Error: Ячейка пустая')
 
