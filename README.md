@@ -13,3 +13,7 @@
 - Задание 4 : Интерпретатор языка COW.
 
   <a href="https://github.com/DaniilZverev/langProg/blob/master/task_4.py" targer="_blank">task_4.py</a>
+
+- Задание 5 : Расширение для HashMap.
+
+  <a href="https://github.com/DaniilZverev/langProg/blob/master/task_5.swift" targer="_blank">task_5.swift</a>
